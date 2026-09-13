@@ -1,24 +1,44 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
+
 </script>
 
 <template>
   <div class="text_effect"></div>
 
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/newLogoLight.png" /> 
-
+    <RouterLink to="/"><img alt="Vue logo" class="logo" src="./assets/newLogoLight.png" /></RouterLink>
     <nav>
-    <a>Home</a>
-    <a>Contact</a>
-    <a class= "rainbow">My Github !</a>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/">About Me</RouterLink>
+    <RouterLink to="/">Index</RouterLink>
+    <a href="#contact">Contact</a>
+    <a class= "rainbow" href="https://github.com/Halchimer">My Github !</a>
   </nav>
   </header>
 
-  <main>
-    
-  </main>
+  <RouterView />
+
+  <button
+    class="back-to-top"
+    @click="scrollToTop"
+  >
+    ↑
+  </button>
+
+  <footer id="contact">
+    <a class="mail" href="mailto:g.denivelle@proton.me">g.denivelle@proton.me</a>
+    <a class="phone" href="tel:+33785061009">07 85 06 10 09</a>
+    <a class="linkedin" href="www.linkedin.com/in/gabriel-denivelle">LinkedIn</a>
+  </footer>
 </template>
 
 <style scoped>
@@ -42,16 +62,6 @@ header nav a {
   user-select: none;
 }
 
-.rainbow {
-  filter:none;
-  background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: rainbow_animation 6s ease-in-out infinite;
-  background-size: 400% 100%;
-}
-
 .logo {
   display : inline-block;
   height : 3rem;
@@ -73,29 +83,25 @@ header nav a {
   pointer-events: none;
 }
 
-@keyframes logoPulse {
-  0% {
-    filter : drop-shadow(0 0 2px white);
-  }
-  30% {
-    filter : drop-shadow(0 0 2px white);
-  }
-  65% {
-    filter : drop-shadow(0 0 10px white);
-  }
-  100% {
-    filter : drop-shadow(0 0 2px white);
-  }
+footer {
+  display : flex;
+  justify-content: space-evenly;
+  width : 100%;
+  background-color: red;
+  color : black;
 }
 
-@keyframes rainbow_animation {
-    0%,100% {
-        background-position: 0 0;
-    }
-
-    50% {
-        background-position: 100% 0;
-    }
+.back-to-top {
+  position : fixed;
+  width : 2rem;
+  height : 2rem;
+  right : 2rem;
+  bottom : 2rem;
+  border : none;
+  outline : none;
+  box-shadow: none;
+  font-family: "Jersey 10";
+  mix-blend-mode: difference;
 }
 
 @keyframes backgroundScrollDiagonal {

@@ -12,7 +12,8 @@
     "format": "oxfmt src/"
   },
   "dependencies": {
-    "vue": "rc"
+    "vue": "rc",
+    "vue-router": "^5.3.1"
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.4",

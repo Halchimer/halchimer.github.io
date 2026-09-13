@@ -1,5 +1,9 @@
 @import './base.css';
 
+h1 {
+  font-family: "Jersey 10";
+}
+
 #app {
   max-width: 1280px;
   margin: 0;
@@ -33,7 +37,42 @@ a {
 
   #app {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding: 0;
+  }
+}
+
+.rainbow {
+  filter:none;
+  background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+@keyframes logoPulse {
+  0% {
+    filter : drop-shadow(0 0 2px white);
+  }
+  30% {
+    filter : drop-shadow(0 0 2px white);
+  }
+  65% {
+    filter : drop-shadow(0 0 10px white);
+  }
+  100% {
+    filter : drop-shadow(0 0 2px white);
   }
 }
