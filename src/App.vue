@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-
+import Tooltip from './components/Tooltip.vue';
 function scrollToTop() {
   window.scrollTo({
     top: 0,
@@ -31,7 +29,8 @@ function scrollToTop() {
     class="back-to-top"
     @click="scrollToTop"
   >
-    ↑
+    <img src="/public/scrolltop.webp" />
+    <Tooltip text="Scroll to top" />
   </button>
 
   <footer id="contact">
@@ -93,15 +92,21 @@ footer {
 
 .back-to-top {
   position : fixed;
-  width : 2rem;
-  height : 2rem;
+  width : 4rem;
+  height : 4rem;
   right : 2rem;
   bottom : 2rem;
   border : none;
   outline : none;
   box-shadow: none;
-  font-family: "Jersey 10";
-  mix-blend-mode: difference;
+  background:none;
+  cursor : cell;
+}
+
+.back-to-top img {
+  width : 100%;
+  mix-blend-mode:overlay;
+  pointer-events: none;
 }
 
 @keyframes backgroundScrollDiagonal {

@@ -68,6 +68,20 @@ const search = ref('')
   >
     <img v-if="project.image" :src="project.image" :alt="project.title">
   </PortfolioItem>
+
+  <PortfolioItem
+    v-if="search.toLowerCase().includes('who') && search.toLowerCase().includes('you')"
+    title="I am god."
+    desc="I will ascend to the heavens;
+          I will raise my throne above the stars of God;
+          I will sit enthroned on the mount of assembly, on the utmost heights of Mount Zaphon.
+          I will ascend above the tops of the clouds;
+          I will make myself like the Most High."
+    :skills="['Omniscience', 'Omnipotence']"
+    to="/"
+    :media="false"
+  ></PortfolioItem>
+
   </main>
 </template>
 

@@ -144,7 +144,7 @@ export const projects: Project[] = [
     slug: 'art',
     title: 'My Art',
     description: 'Everything ranging from drawing to 3D modeling.',
-    link: '/',
+    link: '/myart',
     categories : ['art']
   },
 ]
