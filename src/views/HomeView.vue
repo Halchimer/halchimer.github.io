@@ -80,6 +80,7 @@ const search = ref('')
     :skills="['Omniscience', 'Omnipotence']"
     to="/"
     :media="false"
+    :right="false"
   ></PortfolioItem>
 
   </main>
