@@ -36,7 +36,7 @@ function scrollToTop() {
   <footer id="contact">
     <a class="mail" href="mailto:g.denivelle@proton.me">g.denivelle@proton.me</a>
     <a class="phone" href="tel:+33785061009">07 85 06 10 09</a>
-    <a class="linkedin" href="www.linkedin.com/in/gabriel-denivelle">LinkedIn</a>
+    <a class="linkedin" href="https://www.linkedin.com/in/gabriel-denivelle">LinkedIn</a>
   </footer>
 </template>
 

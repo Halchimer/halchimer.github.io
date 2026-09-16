@@ -31,7 +31,7 @@ const offset = `${Math.random() * 25}%`;
                 >{{ skill }}</span>
             </div>
             <p :class="{'align_right' : right}">{{ desc }}</p> 
-            <a :href="to">{{linkTexts[Math.floor(Math.random() * linkTexts.length)]}}</a>
+            <RouterLink :to="to??''">{{linkTexts[Math.floor(Math.random() * linkTexts.length)]}}</RouterLink>
         </div>
     </div>
     <hr></hr>
